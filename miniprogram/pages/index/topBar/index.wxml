@@ -1,0 +1,21 @@
+<!--pages/index/topBar/index.wxml-->
+<!-- 加人及搜索 -->
+<view class="container">
+  <icon class="icon add-user" />
+  <form class="form">
+    <view class="input-box">
+    <view class="input-container">
+      <icon class="icon search" />
+      <input placeholder='搜索简书上的内容和朋友' placeholder-class='input-holder' />
+    </view>
+    </view>
+  </form>
+</view>
+<!-- 标签栏 -->
+<scroll-view scroll-x class="taglist">
+  <view class="tags" wx:for="{{tagList}}" wx:key="tag" >
+    <view class="tag {{activeTag == item.key ? 'active' : ''}}" data-id="{{item.key}}" bindtap='changeTag'>
+      {{item.value}}
+    </view>
+  </view>
+</scroll-view>
